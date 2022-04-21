@@ -5,14 +5,11 @@ const config = {
   useSystemColorMode: false,
 };
 
-const breakpoints = {
-  sm: "320px",
-  md: "768px",
-  lg: "960px",
-  xl: "1200px",
-  "2xl": "1536px",
+const fonts = {
+  heading: "M PLUS Rounded 1c, sans-serif",
+  body: "M PLUS Rounded 1c, sans-serif ",
 };
 
-const theme = extendTheme({ config, breakpoints });
+const theme = extendTheme({ config, fonts });
 
 export default theme;
