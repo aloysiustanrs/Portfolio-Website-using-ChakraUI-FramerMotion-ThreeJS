@@ -1,7 +1,7 @@
 import { Box, Text, Image, Heading } from "@chakra-ui/react";
 import React from "react";
 
-const Home = () => {
+const About = () => {
   return (
     <Box>
       <Heading>About</Heading>
@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;

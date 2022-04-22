@@ -1,19 +1,17 @@
 import Nav from "../components/Nav";
-import Home from "../components/Home";
+import About from "../components/About";
 import NameAndImage from "../components/NameAndImage";
+import Skills from "../components/Skills";
+import Layout from "../styles/Layout";
 
 import { Box, Container } from "@chakra-ui/react";
 
 export default function Index() {
   return (
-    <Container maxW="container.md" boxSizing="initial">
-      <Nav />
-      <Box pt="160px" />
-
-      <Container maxW="container.sm">
-        <NameAndImage />
-        <Home />
-      </Container>
-    </Container>
+    <Layout>
+      <NameAndImage />
+      <About />
+      <Skills />
+    </Layout>
   );
 }

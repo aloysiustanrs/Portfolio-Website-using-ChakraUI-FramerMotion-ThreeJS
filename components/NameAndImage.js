@@ -16,10 +16,20 @@ const blink = keyframes`
     } 
 `;
 
-const NameAndImage = () => {
-  const typingAnimation = `${typing} 3s steps(13) forwards`;
+const hidden = keyframes`
+    0%,100% {
+        visibility: hidden
 
-  const blinkAnimation = `${blink} 2s 5`;
+    }
+
+`;
+
+const NameAndImage = () => {
+  const typingAnimation = `${typing} 2s steps(13) forwards 0.5s`;
+
+  const hiddenAnimation = `${hidden} 0.5s 1`;
+
+  const blinkAnimation = `${blink} 2s 4`;
 
   return (
     <Box display={{ base: "block", md: "flex" }} justifyContent="space-between">
@@ -33,8 +43,9 @@ const NameAndImage = () => {
             whiteSpace="nowrap"
             overflow="hidden"
             fontFamily="monospace"
-            animation={`${typingAnimation} , ${blinkAnimation}`}
+            animation={`${typingAnimation} , ${blinkAnimation} , ${hiddenAnimation}`}
             letterSpacing="wide"
+            fontWeight="bold"
             fontSize="36px"
           >
             Aloysius Tan&nbsp;
