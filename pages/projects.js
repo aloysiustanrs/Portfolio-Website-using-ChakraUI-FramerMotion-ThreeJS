@@ -3,7 +3,7 @@ import Layout from "../styles/Layout";
 import ProjectItem from "../components/ProjectItem";
 import { Grid, Heading } from "@chakra-ui/react";
 
-const projects = () => {
+const Projects = () => {
   return (
     <Layout>
       <Heading mb="50px">Projects</Heading>
@@ -36,4 +36,4 @@ const projects = () => {
   );
 };
 
-export default projects;
+export default Projects;
