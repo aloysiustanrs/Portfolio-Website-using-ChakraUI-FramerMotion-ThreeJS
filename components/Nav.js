@@ -65,6 +65,7 @@ const Nav = () => {
               as={IconButton}
               icon={<HamburgerIcon />}
               ml={3}
+              mr={5}
             ></MenuButton>
             <MenuList>
               <NextLink href="/" passHref>
