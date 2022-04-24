@@ -1,14 +1,6 @@
 import React, { useState, useRef } from "react";
-
-// import { PythonIcon } from "programming-languages-logos/src/swift/swift.svg";
-// import swift from "programming-languages-logos/src/swift/swift.svg";
-// import Java from "../public/icons/java.svg";
-// import Javascript from "../public/icons/javascript.svg";
-// import HTML from "../public/icons/html.svg";
-// import CSS from "../public/icons/css3.svg";
-// import Bootstrap from "../public/icons/bootstrap.svg";
-// import ReactIcon from "../public/icons/react.svg";
-// import Android from "../public/icons/android.svg";
+import { motion } from "framer-motion";
+import { Section } from "./Section";
 
 import {
   FaPython,
@@ -20,19 +12,7 @@ import {
 } from "react-icons/fa";
 import { SiJavascript, SiCss3 } from "react-icons/si";
 
-import {
-  Box,
-  Button,
-  Heading,
-  Text,
-  Tag,
-  HStack,
-  Grid,
-  GridItem,
-  TagLabel,
-  TagLeftIcon,
-  Icon,
-} from "@chakra-ui/react";
+import { Box, Button, Heading, Text, Grid } from "@chakra-ui/react";
 
 import TagComponent from "./TagComponent";
 
@@ -57,29 +37,39 @@ const Skills = () => {
   ];
 
   return (
-    <Box>
-      <Heading py="30px">Skills</Heading>
-      <Grid
-        templateColumns={{
-          md: "repeat(4, 140px )",
-          sm: "repeat(3, 140px )",
-          xs: "repeat(2, 140px )",
-        }}
-        gap={3}
-      >
-        {badgeItems.slice(0, visible).map((item) => item)}
-        <Button
-          py="10px"
-          px="20px"
-          ref={loadMoreButton}
-          onClick={loadMoreItems}
-          display="flex"
-          alignContent="center"
+    <Section delayDuration={2.4}>
+      <Box>
+        <Heading py="30px">Skills</Heading>
+        <Grid
+          templateColumns={{
+            md: "repeat(4, 140px )",
+            sm: "repeat(3, 140px )",
+            xs: "repeat(2, 140px )",
+          }}
+          gap={3}
         >
-          <Text>+&nbsp;Load more</Text>
-        </Button>
-      </Grid>
-    </Box>
+          {badgeItems.slice(0, visible).map((item) => item)}
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <Button
+              py="10px"
+              px="20px"
+              ref={loadMoreButton}
+              onClick={loadMoreItems}
+              display="flex"
+              alignContent="center"
+              width="140px"
+            >
+              <Text>+&nbsp;Load more</Text>
+            </Button>
+          </motion.div>
+        </Grid>
+      </Box>
+    </Section>
   );
 };
 

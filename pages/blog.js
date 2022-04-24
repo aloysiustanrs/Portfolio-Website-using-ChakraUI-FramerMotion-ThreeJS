@@ -1,17 +1,8 @@
-import Head from "next/head";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import Layout from "../styles/Layout";
-import {
-  Button,
-  ButtonGroup,
-  Flex,
-  Text,
-  Heading,
-  Box,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Flex, Text, Heading, Box, useColorModeValue } from "@chakra-ui/react";
 
 export default function Blogs({ allPostsData }) {
   function pointerCursor(e) {

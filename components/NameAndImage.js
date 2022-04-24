@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Image, Heading, keyframes } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 const typing = keyframes`
     from { width: 0 }
@@ -25,14 +26,18 @@ const hidden = keyframes`
 `;
 
 const NameAndImage = () => {
-  const typingAnimation = `${typing} 2s steps(13) forwards 0.5s`;
+  const typingAnimation = `${typing} 1.5s steps(13) forwards 0.5s`;
 
   const hiddenAnimation = `${hidden} 0.5s 1`;
 
   const blinkAnimation = `${blink} 2s 4`;
 
   return (
-    <Box display={{ base: "block", md: "flex" }} justifyContent="space-between">
+    <Box
+      display={{ base: "block", md: "flex" }}
+      justifyContent="space-between"
+      mb={6}
+    >
       <Box
         display={{ base: "flex", md: "block" }}
         flexDirection="column"
@@ -51,20 +56,32 @@ const NameAndImage = () => {
             Aloysius Tan&nbsp;
           </Heading>
 
-          <Heading fontSize="md" letterSpacing="wide" pt={4}>
-            Software Engineer
-          </Heading>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 2 }}
+          >
+            <Heading fontSize="md" letterSpacing="wide" pt={4}>
+              Software Engineer
+            </Heading>
+          </motion.div>
         </Box>
       </Box>
-      <Box display={{ base: "flex", md: "block" }} justifyContent="center">
-        <Image
-          my={{ base: "30px", md: "0" }}
-          borderRadius="full"
-          boxSize="180px"
-          src="/images/profile.jpg"
-          alt="Aloysius Tan"
-        />
-      </Box>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 2 }}
+      >
+        <Box display={{ base: "flex", md: "block" }} justifyContent="center">
+          <Image
+            my={{ base: "30px", md: "0" }}
+            borderRadius="full"
+            boxSize="180px"
+            src="/images/profile.jpg"
+            alt="Aloysius Tan"
+          />
+        </Box>
+      </motion.div>
     </Box>
   );
 };
