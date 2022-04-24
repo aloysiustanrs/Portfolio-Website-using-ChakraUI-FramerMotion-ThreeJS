@@ -1,6 +1,6 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
-import Date from "../../components/date";
+import Date from "../../components/Date";
 import Layout from "../../styles/layout";
 import { Heading, Divider, useColorModeValue } from "@chakra-ui/react";
 
