@@ -1,6 +1,6 @@
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
-import Date from "../components/date";
+import Date from "../components/Date";
 import Layout from "../styles/layout";
 import { Flex, Heading, Box, useColorModeValue } from "@chakra-ui/react";
 import { Section } from "../components/Section";
@@ -26,7 +26,7 @@ export default function Blogs({ allPostsData }) {
           key={id}
           hover="1.1"
         >
-          <Link href={`/blog/${id}`} passHref>
+          <Link href={`/blogs/${id}`} passHref>
             <Box
               onMouseOver={pointerCursor}
               border="solid 1px"
