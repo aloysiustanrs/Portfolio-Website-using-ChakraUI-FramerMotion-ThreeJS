@@ -1,7 +1,7 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
-import Layout from "../../styles/Layout";
+import Layout from "../../styles/layout";
 import { Heading, Divider, useColorModeValue } from "@chakra-ui/react";
 
 export default function Post({ postData }) {

@@ -1,10 +1,7 @@
-import Nav from "../components/Nav";
 import About from "../components/About";
 import NameAndImage from "../components/NameAndImage";
 import Skills from "../components/Skills";
-import Layout from "../styles/Layout";
-
-import { Box, Container } from "@chakra-ui/react";
+import Layout from "../styles/layout";
 
 export default function Index() {
   return (

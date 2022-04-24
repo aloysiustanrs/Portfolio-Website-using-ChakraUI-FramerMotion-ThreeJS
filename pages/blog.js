@@ -1,7 +1,7 @@
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import Layout from "../styles/Layout";
+import Layout from "../styles/layout";
 import { Flex, Heading, Box, useColorModeValue } from "@chakra-ui/react";
 import { Section } from "../components/Section";
 
