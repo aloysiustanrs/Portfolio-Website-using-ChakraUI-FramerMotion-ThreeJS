@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../styles/layout";
+import Layout from "../components/Layout";
 import ProjectItem from "../components/ProjectItem";
 import { Grid, Heading } from "@chakra-ui/react";
 

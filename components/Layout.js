@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container } from "@chakra-ui/react";
-import Nav from "../components/Nav";
+import Nav from "./Nav";
 
 const layout = ({ children }) => {
   return (
