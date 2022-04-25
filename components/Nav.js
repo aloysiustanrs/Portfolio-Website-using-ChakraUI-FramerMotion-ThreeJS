@@ -46,13 +46,14 @@ const Nav = () => {
         </Heading>
 
         {/* Nav links */}
-        <HStack spacing="10px" display={{ base: "none", md: "block" }}>
+        <HStack spacing="10px" display={{ base: "none", md: "flex" }}>
           <NextLink href="/" passHref>
             <Link
               bgColor={router.pathname == "/" && linkColor}
               px="10px"
               py="8px"
               borderRadius="5px"
+              userSelect="none"
             >
               Home
             </Link>
@@ -63,6 +64,7 @@ const Nav = () => {
               px="10px"
               py="8px"
               borderRadius="5px"
+              userSelect="none"
             >
               Projects
             </Link>
@@ -73,6 +75,7 @@ const Nav = () => {
               px="10px"
               py="8px"
               borderRadius="5px"
+              userSelect="none"
             >
               Blog
             </Link>

@@ -12,7 +12,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400&family=Roboto:wght@500;700;900&display=swap"
           rel="stylesheet"
         />
-        <link href="https://languages.abranhe.com/logos.css" rel="stylesheet" />
       </Head>
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode}>
