@@ -38,12 +38,9 @@ const NameAndImage = () => {
       display={{ base: "block", md: "flex" }}
       justifyContent="space-between"
       mb={6}
+      pt={5}
     >
-      <Box
-        display={{ base: "flex", md: "block" }}
-        flexDirection="column"
-        justifyContent="center"
-      >
+      <Box display="flex" flexDirection="column" justifyContent="center">
         <Box maxWidth="269.02px">
           <Heading
             whiteSpace="nowrap"
