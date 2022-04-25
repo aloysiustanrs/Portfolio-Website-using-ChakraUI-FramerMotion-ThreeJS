@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Image, Heading, keyframes } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { Section } from "./Section";
 
 const typing = keyframes`
     from { width: 0 }
@@ -56,22 +57,14 @@ const NameAndImage = () => {
             Aloysius Tan&nbsp;
           </Heading>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2 }}
-          >
+          <Section delayDuration="0">
             <Heading fontSize="md" letterSpacing="wide" pt={4}>
               Software Engineer
             </Heading>
-          </motion.div>
+          </Section>
         </Box>
       </Box>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 2 }}
-      >
+      <Section delayDuration="0">
         <Box display={{ base: "flex", md: "block" }} justifyContent="center">
           <Image
             my={{ base: "30px", md: "0" }}
@@ -81,7 +74,7 @@ const NameAndImage = () => {
             alt="Aloysius Tan"
           />
         </Box>
-      </motion.div>
+      </Section>
     </Box>
   );
 };

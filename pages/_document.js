@@ -13,8 +13,6 @@ export default function Document() {
           rel="stylesheet"
         />
         <link href="https://languages.abranhe.com/logos.css" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Aloysius Tan</title>
       </Head>
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode}>

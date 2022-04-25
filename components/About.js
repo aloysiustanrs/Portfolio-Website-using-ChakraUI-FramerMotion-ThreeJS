@@ -4,7 +4,7 @@ import { Section } from "./Section";
 
 const About = () => {
   return (
-    <Section delayDuration={2.2}>
+    <Section delayDuration={0.2}>
       <Box>
         <Heading>About</Heading>
         <Text pr={{ md: "80px" }} pt="30px" lineHeight={"30px"}>

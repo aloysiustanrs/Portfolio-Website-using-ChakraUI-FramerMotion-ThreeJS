@@ -35,18 +35,6 @@ const Projects = () => {
           image="black"
           text="Quis esse magna incididunt ut duis voluptate minim do."
         />
-        <ProjectItem
-          delayDuration="0.5"
-          heading="Project 5"
-          image="black"
-          text="Quis esse magna incididunt ut duis voluptate minim do."
-        />
-        <ProjectItem
-          delayDuration="0.6"
-          heading="Project 6"
-          image="black"
-          text="Quis esse magna incididunt ut duis voluptate minim do."
-        />
       </Grid>
     </Layout>
   );

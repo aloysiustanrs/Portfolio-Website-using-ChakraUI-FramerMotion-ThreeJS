@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 const layout = ({ children }) => {
   return (
-    <Container maxW="container.md" boxSizing="initial">
+    <Container maxW="container.md" boxSizing="initial" overflowX="hidden">
       <Nav />
       <Box pt="160px" />
 

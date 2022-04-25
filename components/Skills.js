@@ -12,13 +12,21 @@ import {
 } from "react-icons/fa";
 import { SiJavascript, SiCss3 } from "react-icons/si";
 
-import { Box, Button, Heading, Text, Grid } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  Text,
+  Grid,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 import TagComponent from "./TagComponent";
 
 const Skills = () => {
   const [visible, setVisible] = useState(3);
   const loadMoreButton = useRef(null);
+  const buttonColor = useColorModeValue("#CBD5E0", "#373a44");
 
   const loadMoreItems = () => {
     setVisible((prevValue) => prevValue + (badgeItems.length - 3));
@@ -37,7 +45,7 @@ const Skills = () => {
   ];
 
   return (
-    <Section delayDuration={2.4}>
+    <Section delayDuration={0.4}>
       <Box>
         <Heading py="30px">Skills</Heading>
         <Grid
@@ -63,6 +71,7 @@ const Skills = () => {
               display="flex"
               alignContent="center"
               width="140px"
+              bgColor={buttonColor}
             >
               <Text>+&nbsp;Load more</Text>
             </Button>

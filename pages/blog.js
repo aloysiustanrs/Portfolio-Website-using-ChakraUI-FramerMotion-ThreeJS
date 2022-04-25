@@ -10,8 +10,8 @@ export default function Blogs({ allPostsData }) {
     e.target.style.cursor = "pointer";
   }
 
-  const borderColor = useColorModeValue("gray.400", "#718096");
-  const backgroundColor = useColorModeValue("gray.400", "blackAlpha.300");
+  const borderColor = useColorModeValue("gray.500", "#718096");
+  const backgroundColor = useColorModeValue("#cbd5e0", "blackAlpha.300");
 
   return (
     <Layout>

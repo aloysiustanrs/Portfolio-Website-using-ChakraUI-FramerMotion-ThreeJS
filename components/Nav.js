@@ -1,5 +1,6 @@
 import React from "react";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import {
   Box,
   Container,
@@ -12,13 +13,16 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
-
 import ThemeToggleButton from "./ThemeToggleButton";
 
 const Nav = () => {
+  const router = useRouter();
+
+  const linkColor = useColorModeValue("#cbd5e0", "#373a44");
   return (
     <Container
       m={0}
@@ -42,15 +46,36 @@ const Nav = () => {
         </Heading>
 
         {/* Nav links */}
-        <HStack spacing="24px" display={{ base: "none", md: "block" }}>
+        <HStack spacing="10px" display={{ base: "none", md: "block" }}>
           <NextLink href="/" passHref>
-            <Link>Home</Link>
+            <Link
+              bgColor={router.pathname == "/" && linkColor}
+              px="10px"
+              py="8px"
+              borderRadius="5px"
+            >
+              Home
+            </Link>
           </NextLink>
           <NextLink href="/projects" passHref>
-            <Link>Projects</Link>
+            <Link
+              bgColor={router.pathname == "/projects" && linkColor}
+              px="10px"
+              py="8px"
+              borderRadius="5px"
+            >
+              Projects
+            </Link>
           </NextLink>
           <NextLink href="/blog" passHref>
-            <Link>Blog</Link>
+            <Link
+              bgColor={router.pathname == "/blog" && linkColor}
+              px="10px"
+              py="8px"
+              borderRadius="5px"
+            >
+              Blog
+            </Link>
           </NextLink>
 
           <ThemeToggleButton />
@@ -65,7 +90,6 @@ const Nav = () => {
               as={IconButton}
               icon={<HamburgerIcon />}
               ml={3}
-              mr={5}
             ></MenuButton>
             <MenuList>
               <NextLink href="/" passHref>
