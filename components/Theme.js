@@ -1,22 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
-const bg = {
+const styles = {
   global: (props) => ({
     body: {
       bg: mode("#f9f6f1", "#1c212b")(props),
     },
   }),
-};
-
-const styles = {
-  styles: {
-    global: {
-      "html, body": {
-        overflowX: "hidden",
-      },
-    },
-  },
 };
 
 const config = {
@@ -39,6 +29,6 @@ const breakpoints = {
   "2xl": "96em",
 };
 
-const theme = extendTheme({ bg, styles, config, fonts, breakpoints });
+const theme = extendTheme({ styles, config, fonts, breakpoints });
 
 export default theme;
