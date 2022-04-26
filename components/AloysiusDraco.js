@@ -11,7 +11,7 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF("/aloysiusDraco.gltf");
 
   useFrame(() => {
-    group.current.rotation.y += 0.005;
+    group.current.rotation.y += 0.01;
   });
 
   return (
@@ -19,7 +19,9 @@ export default function Model({ ...props }) {
       <mesh
         geometry={nodes.aloysius.geometry}
         material={materials.palette}
-        rotation={[Math.PI / 2, 0, 0]} scale={0.2} position-y={-2}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.2}
+        position-y={-2}
       />
     </group>
   );
