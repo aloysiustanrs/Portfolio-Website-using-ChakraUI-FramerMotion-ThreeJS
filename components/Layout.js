@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
-import Model from "../components/Model";
+import AloysiusDraco from "./AloysiusDraco";
 
 const layout = ({ children }) => {
   return (
@@ -18,10 +18,10 @@ const layout = ({ children }) => {
         <Box height="300px" mt="40px">
           <Canvas>
             <OrbitControls enableZoom={true} />
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[0, 5, 2]} />
+            <ambientLight intensity={0.4} />
+            <directionalLight position={[0, 3, 2]} />
             <Suspense fallback={null}>
-              <Model />
+              <AloysiusDraco />
             </Suspense>
           </Canvas>
         </Box>

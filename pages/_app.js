@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="author" content="Aloysius Tan"></meta>
         <meta
           property="og:image"
-          content="https://aloysius.vercel.app/_next/image?url=%2Fimages%2Fprofile.jpg&w=384&q=75"
+          content="https://aloysius.vercel.app/images/profile.jpg"
         />
       </Head>
 
