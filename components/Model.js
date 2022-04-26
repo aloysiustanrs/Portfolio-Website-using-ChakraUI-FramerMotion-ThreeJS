@@ -21,7 +21,7 @@ export default function Model({ ...props }) {
         material={materials.palette}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.2}
-        position-y={-2}
+        position-y={-2.5}
       />
     </group>
   );

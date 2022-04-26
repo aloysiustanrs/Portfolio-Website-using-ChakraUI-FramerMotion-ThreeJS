@@ -46,8 +46,10 @@ const Skills = () => {
 
   return (
     <Section delayDuration={0.4}>
-      <Box>
-        <Heading py="30px">Skills</Heading>
+      <Box paddingY="20px">
+        <Heading size="xl" py="30px">
+          Skills
+        </Heading>
         <Grid
           templateColumns={{
             md: "repeat(4, 140px )",

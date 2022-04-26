@@ -27,6 +27,7 @@
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",
     "react-syntax-highlighter": "^15.5.0",
+    "reactstrap": "^9.0.2",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "three": "^0.139.2"

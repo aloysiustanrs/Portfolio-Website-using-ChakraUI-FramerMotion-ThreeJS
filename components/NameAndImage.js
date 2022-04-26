@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Image, Heading, keyframes } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import { Section } from "./Section";
 
 const typing = keyframes`
@@ -38,7 +37,7 @@ const NameAndImage = () => {
       display={{ base: "block", md: "flex" }}
       justifyContent="space-between"
       mb={6}
-      pt={5}
+      paddingTop="30px"
     >
       <Box display="flex" flexDirection="column" justifyContent="center">
         <Box maxWidth="269.02px">

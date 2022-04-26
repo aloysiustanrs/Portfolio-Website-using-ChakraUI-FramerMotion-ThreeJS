@@ -5,8 +5,8 @@ import { Section } from "./Section";
 const About = () => {
   return (
     <Section delayDuration={0.2}>
-      <Box>
-        <Heading>About</Heading>
+      <Box paddingTop="40px" paddingBottom="60px">
+        <Heading size="xl">About</Heading>
         <Text pr={{ md: "80px" }} pt="30px" lineHeight={"30px"}>
           Aloysius is a software engineer from Singapore with a passion to learn
           new technologies and work on projects. He also loves problem-solving

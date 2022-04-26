@@ -41,23 +41,15 @@ const Nav = () => {
           letterSpacing="wider"
           bgGradient={"linear(to-r,red.300,red.500,red.300)"}
           bgClip="text"
+          userSelect="none"
         >
-          ALOYSIUS
+          <NextLink href="/" passHref>
+            <Link>ALOYSIUS</Link>
+          </NextLink>
         </Heading>
 
         {/* Nav links */}
         <HStack spacing="10px" display={{ base: "none", md: "flex" }}>
-          <NextLink href="/" passHref>
-            <Link
-              bgColor={router.pathname == "/" && linkColor}
-              px="10px"
-              py="8px"
-              borderRadius="5px"
-              userSelect="none"
-            >
-              Home
-            </Link>
-          </NextLink>
           <NextLink href="/projects" passHref>
             <Link
               bgColor={router.pathname == "/projects" && linkColor}
