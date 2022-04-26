@@ -1,7 +1,17 @@
 import React from "react";
-import { Heading, Box, Link, Text } from "@chakra-ui/react";
+import {
+  Heading,
+  Box,
+  Link,
+  Text,
+  Flex,
+  Divider,
+  useColorModeValue,
+  HStack,
+} from "@chakra-ui/react";
 import { Section } from "./Section";
-import { Divider, useColorModeValue } from "@chakra-ui/react";
+import LinkTag from "./LinkTag";
+import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   const dividerColor = useColorModeValue("gray.400", "white.100");
@@ -33,12 +43,34 @@ const Contact = () => {
             aloysiustanrs@gmail.com
           </Link>
         </Box>
+
+        <HStack
+          justifyContent={{ xs: "center", base: "flex-start" }}
+          marginTop="80px"
+          overflowX="auto"
+        >
+          <LinkTag
+            label="Linkedin"
+            icon={FaLinkedin}
+            href="https://www.linkedin.com/in/aloysiustanrs/"
+          />
+          <LinkTag
+            label="Twitter"
+            icon={FaTwitter}
+            href="https://twitter.com/aloysiustanrs"
+          />
+          <LinkTag
+            label="Github"
+            icon={FaGithub}
+            href="https://github.com/aloysiustanrs"
+          />
+        </HStack>
       </Box>
       <Divider
         width="70%"
         border="solid 1px"
         borderColor={dividerColor}
-        margin="80px auto 100px"
+        margin="60px auto 100px"
       />
     </Section>
   );

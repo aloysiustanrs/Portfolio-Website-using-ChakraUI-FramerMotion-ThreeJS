@@ -21,7 +21,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import TagComponent from "./TagComponent";
+import SkillTag from "./SkillTag";
 
 const Skills = () => {
   const [visible, setVisible] = useState(3);
@@ -34,14 +34,14 @@ const Skills = () => {
   };
 
   const badgeItems = [
-    <TagComponent key="python" icon={FaPython} label="Python" />,
-    <TagComponent key="java" icon={FaJava} label="Java" />,
-    <TagComponent key="js" icon={SiJavascript} label="JavaScript" />,
-    <TagComponent key="html" icon={FaHtml5} label="HTML" />,
-    <TagComponent key="css" icon={SiCss3} label="CSS" />,
-    <TagComponent key="bootstrap" icon={FaBootstrap} label="Bootstrap" />,
-    <TagComponent key="react" icon={FaReact} label="React" />,
-    <TagComponent key="android" icon={FaAndroid} label="App Dev" />,
+    <SkillTag key="python" icon={FaPython} label="Python" />,
+    <SkillTag key="java" icon={FaJava} label="Java" />,
+    <SkillTag key="js" icon={SiJavascript} label="JavaScript" />,
+    <SkillTag key="html" icon={FaHtml5} label="HTML" />,
+    <SkillTag key="css" icon={SiCss3} label="CSS" />,
+    <SkillTag key="bootstrap" icon={FaBootstrap} label="Bootstrap" />,
+    <SkillTag key="react" icon={FaReact} label="React" />,
+    <SkillTag key="android" icon={FaAndroid} label="App Dev" />,
   ];
 
   return (

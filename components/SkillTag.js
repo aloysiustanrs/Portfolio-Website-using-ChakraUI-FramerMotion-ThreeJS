@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-const TagComponent = ({ icon, label }) => {
+const SkillTag = ({ icon, label }) => {
   const tagColor = useColorModeValue("#CBD5E0", "#373a44");
   return (
     <motion.div
@@ -24,4 +24,4 @@ const TagComponent = ({ icon, label }) => {
   );
 };
 
-export default TagComponent;
+export default SkillTag;

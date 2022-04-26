@@ -14,7 +14,7 @@ const layout = ({ children }) => {
     <Container maxW="container.md" boxSizing="initial" overflowX="hidden">
       <Nav />
 
-      <Container maxW="container.sm">
+      <Container maxW="container.sm" overflowX="hidden">
         <Box height="300px" mt="40px">
           <Canvas>
             <OrbitControls enableZoom={true} />
