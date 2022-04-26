@@ -15,10 +15,10 @@ export default function Model({ ...props }) {
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
-        geometry={nodes.aloysiusnew.geometry}
-        material={materials.palette}
+        geometry={nodes.newmodel.geometry}
+        material={materials["palette.002"]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={0.2}
+        scale={0.23}
         position-y={-2.5}
       />
     </group>

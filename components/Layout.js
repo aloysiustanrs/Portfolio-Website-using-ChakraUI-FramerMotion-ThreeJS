@@ -15,7 +15,7 @@ const layout = ({ children }) => {
       <Nav />
 
       <Container maxW="container.sm" overflowX="hidden">
-        <Box height="300px" mt="40px">
+        <Box height="300px" mt="80px">
           <Canvas>
             <OrbitControls enableZoom={true} />
             <ambientLight intensity={0.4} />
