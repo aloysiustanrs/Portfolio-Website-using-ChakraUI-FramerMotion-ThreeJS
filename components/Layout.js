@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
-import AloysiusDraco from "./AloysiusDraco";
+import AloysiusDraco from "../components/AloysiusDraco";
 
 const layout = ({ children }) => {
   return (
