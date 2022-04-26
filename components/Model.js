@@ -7,17 +7,15 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model({ ...props }) {
-  const group = useRef();
-  const { nodes, materials } = useGLTF("/model.gltf");
-
   useFrame(() => {
     group.current.rotation.y += 0.005;
   });
-
+  const group = useRef();
+  const { nodes, materials } = useGLTF("/model.gltf");
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
-        geometry={nodes.aloysius.geometry}
+        geometry={nodes.aloysiusnew.geometry}
         material={materials.palette}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.2}
