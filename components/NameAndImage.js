@@ -31,7 +31,7 @@ const NameAndImage = () => {
 
   const hiddenAnimation = `${hidden} 0.5s 1`;
 
-  const blinkAnimation = `${blink} 2s 4`;
+  const blinkAnimation = `${blink} 2.1s 4`;
 
   return (
     <Box
