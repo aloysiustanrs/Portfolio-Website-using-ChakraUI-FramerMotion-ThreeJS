@@ -24,7 +24,7 @@ export default function Blogs({ allPostsData }) {
               : `0.${index}`
           }
           key={id}
-          hover="1.1"
+          hover="1.05"
         >
           <Link href={`/blogs/${id}`} passHref>
             <Box

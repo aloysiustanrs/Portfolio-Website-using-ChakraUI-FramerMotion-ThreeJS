@@ -7,8 +7,19 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 export default function Model({ ...props }) {
+  const { Timer } = require("timer-node");
+  const timer = new Timer({ label: "test-timer" });
+
+  timer.start();
+
+  let spinSlow = () => (group.current.rotation.y += 0.3);
+  let spinFast = () => (group.current.rotation.y += 0.005);
   useFrame(() => {
-    group.current.rotation.y += 0.005;
+    if (timer.ms() < 200) {
+      spinSlow();
+    } else {
+      spinFast();
+    }
   });
 
   const group = useRef();
@@ -16,8 +27,8 @@ export default function Model({ ...props }) {
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
-        geometry={nodes["new"].geometry}
-        material={materials.palette}
+        geometry={nodes.new002.geometry}
+        material={materials["palette.003"]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.23}
         position-y={-2.5}
