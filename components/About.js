@@ -9,7 +9,7 @@ const About = () => {
         <Heading size="xl" letterSpacing="wide">
           About
         </Heading>
-        <Text pr={{ base: "40px", md: "40px" }} pt="30px" lineHeight={"30px"}>
+        <Text pr="40px" pt="30px" lineHeight={"30px"}>
           Aloysius is a software engineer from Singapore with a passion to learn
           new technologies and work on projects. He also loves problem-solving
           questions from sites such as Leetcode. Other than programming, he
