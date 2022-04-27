@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { CloseIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./ThemeToggleButton";
 
 const Nav = () => {
@@ -84,22 +85,29 @@ const Nav = () => {
         >
           <ThemeToggleButton display={{ base: "inline-block", md: "none" }} />
           <Menu>
-            <MenuButton
-              as={IconButton}
-              icon={<HamburgerIcon />}
-              ml={3}
-            ></MenuButton>
-            <MenuList>
-              <NextLink href="/" passHref>
-                <MenuItem as="a">Home</MenuItem>
-              </NextLink>
-              <NextLink href="/projects" passHref>
-                <MenuItem as="a">Projects</MenuItem>
-              </NextLink>
-              <NextLink href="/blog" passHref>
-                <MenuItem as="a">Blog</MenuItem>
-              </NextLink>
-            </MenuList>
+            {({ isOpen }) => (
+              <>
+                <MenuButton
+                  as={IconButton}
+                  isActive={isOpen}
+                  icon={
+                    isOpen ? <CloseIcon fontSize="11px" /> : <HamburgerIcon />
+                  }
+                  ml={3}
+                ></MenuButton>
+                <MenuList>
+                  <NextLink href="/" passHref>
+                    <MenuItem as="a">Home</MenuItem>
+                  </NextLink>
+                  <NextLink href="/projects" passHref>
+                    <MenuItem as="a">Projects</MenuItem>
+                  </NextLink>
+                  <NextLink href="/blog" passHref>
+                    <MenuItem as="a">Blog</MenuItem>
+                  </NextLink>
+                </MenuList>
+              </>
+            )}
           </Menu>
         </Box>
       </Flex>
