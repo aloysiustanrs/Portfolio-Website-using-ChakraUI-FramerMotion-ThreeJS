@@ -10,13 +10,14 @@ export default function Model({ ...props }) {
   useFrame(() => {
     group.current.rotation.y += 0.005;
   });
+
   const group = useRef();
   const { nodes, materials } = useGLTF("/model.gltf");
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
-        geometry={nodes.newmodel.geometry}
-        material={materials["palette.002"]}
+        geometry={nodes["new"].geometry}
+        material={materials.palette}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.23}
         position-y={-2.5}
