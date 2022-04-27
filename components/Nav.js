@@ -96,14 +96,22 @@ const Nav = () => {
                   ml={3}
                 ></MenuButton>
                 <MenuList>
-                  <NextLink href="/" passHref>
-                    <MenuItem as="a">Home</MenuItem>
-                  </NextLink>
                   <NextLink href="/projects" passHref>
-                    <MenuItem as="a">Projects</MenuItem>
+                    <MenuItem
+                      as="a"
+                      bgColor={router.pathname == "/projects" && linkColor}
+                    >
+                      Projects
+                    </MenuItem>
                   </NextLink>
                   <NextLink href="/blog" passHref>
-                    <MenuItem as="a">Blog</MenuItem>
+                    <MenuItem
+                      as="a"
+                      bgColor={router.pathname == "/blog" && linkColor}
+                      style={{}}
+                    >
+                      Blog
+                    </MenuItem>
                   </NextLink>
                 </MenuList>
               </>

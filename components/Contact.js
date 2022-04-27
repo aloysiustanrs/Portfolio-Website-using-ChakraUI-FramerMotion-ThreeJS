@@ -4,7 +4,13 @@ import {
   Box,
   Link,
   Text,
-  Flex,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverBody,
   Divider,
   useColorModeValue,
   HStack,
@@ -34,14 +40,22 @@ const Contact = () => {
           <Text fontSize="lg" paddingY="10px">
             Aloysius Tan
           </Text>
-          <Link
-            id="email"
-            onClick={() =>
-              navigator.clipboard.writeText("aloysiustanrs@gmail.com")
-            }
-          >
-            aloysiustanrs@gmail.com
-          </Link>
+          <Popover isLazy placement="bottom" trigger="hover">
+            <PopoverTrigger>
+              <Link
+                id="email"
+                onClick={() =>
+                  navigator.clipboard.writeText("aloysiustanrs@gmail.com")
+                }
+              >
+                aloysiustanrs@gmail.com
+              </Link>
+            </PopoverTrigger>
+            <PopoverContent width="100px" height="40px" role="tooltip">
+              <PopoverArrow />
+              <PopoverBody fontSize="sm">Copy me!</PopoverBody>
+            </PopoverContent>
+          </Popover>
         </Box>
 
         <HStack
