@@ -6,6 +6,11 @@ const styles = {
     body: {
       bg: mode("#f9f6f1", "#1c212b")(props),
     },
+    "html, body": {
+      color: props.colorMode === "dark" ? "white" : "gray.800",
+      lineHeight: "tall",
+      overflowX: "hidden",
+    },
   }),
 };
 
