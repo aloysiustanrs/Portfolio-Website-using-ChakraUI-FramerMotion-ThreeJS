@@ -40,7 +40,7 @@ const NameAndImage = () => {
       paddingTop="30px"
     >
       <Box display="flex" flexDirection="column" justifyContent="center">
-        <Box maxWidth="269.02px">
+        <Box maxWidth="fit-content">
           <Heading
             whiteSpace="nowrap"
             overflow="hidden"

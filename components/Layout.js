@@ -16,7 +16,7 @@ const layout = ({ children }) => {
 
       <Container maxW="container.sm" overflowX="hidden">
         <Box height="300px" mt="80px">
-          <Canvas shadowMap camera={{ position: [-20, 2, 5], fov: 20 }}>
+          <Canvas camera={{ position: [-20, 2, 5], fov: 20 }}>
             <OrbitControls enableZoom={true} />
             <ambientLight intensity={0.8} />
             <directionalLight position={[0, 3, 2]} />

@@ -78,7 +78,10 @@ const Nav = () => {
 
         {/* Hamburger icon */}
 
-        <Box display={{ base: "inline-block", md: "none" }}>
+        <Box
+          display={{ base: "inline-block", md: "none" }}
+          pr={{ base: "10px", md: "none" }}
+        >
           <ThemeToggleButton display={{ base: "inline-block", md: "none" }} />
           <Menu>
             <MenuButton

@@ -26,6 +26,7 @@ const fonts = {
 
 const breakpoints = {
   none: "0 em",
+  linkTag:"468px",
   xs: "15em",
   sm: "30em",
   md: "48em",

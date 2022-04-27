@@ -45,7 +45,7 @@ const Contact = () => {
         </Box>
 
         <HStack
-          justifyContent={{ xs: "center", base: "flex-start" }}
+          justifyContent={{ base: "flex-start", linkTag: "center" }}
           marginTop="80px"
           overflowX="auto"
         >
