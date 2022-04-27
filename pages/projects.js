@@ -6,7 +6,7 @@ import { Grid, Heading } from "@chakra-ui/react";
 const Projects = () => {
   return (
     <Layout>
-      <Heading mb="50px">Projects</Heading>
+      <Heading mb="50px" letterSpacing="wide">Projects</Heading>
       <Grid
         templateColumns={{ base: "repeat(1)", md: "repeat(2, 1fr)" }}
         gap={10}

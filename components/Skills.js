@@ -47,7 +47,7 @@ const Skills = () => {
   return (
     <Section delayDuration={0.4}>
       <Box paddingY="20px">
-        <Heading size="xl" py="30px">
+        <Heading size="xl" py="30px" letterSpacing="wide">
           Skills
         </Heading>
         <Grid
@@ -75,7 +75,9 @@ const Skills = () => {
               width="140px"
               bgColor={buttonColor}
             >
-              <Text>+&nbsp;Load more</Text>
+              <Text fontSize="15px" fontWeight="500">
+                +&nbsp;Load more
+              </Text>
             </Button>
           </motion.div>
         </Grid>

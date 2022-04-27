@@ -24,7 +24,7 @@ const Contact = () => {
         margin="150px auto 100px"
       />
       <Box paddingBottom="90px" textAlign="center">
-        <Heading size="xl" py="30px">
+        <Heading size="xl" py="30px" letterSpacing="wide">
           Contact Me
         </Heading>
         <Box>

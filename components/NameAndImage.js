@@ -44,7 +44,6 @@ const NameAndImage = () => {
           <Heading
             whiteSpace="nowrap"
             overflow="hidden"
-            fontFamily="monospace"
             animation={`${typingAnimation} , ${blinkAnimation} , ${hiddenAnimation}`}
             letterSpacing="wide"
             fontWeight="bold"

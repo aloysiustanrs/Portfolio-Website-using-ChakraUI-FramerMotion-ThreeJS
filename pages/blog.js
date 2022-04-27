@@ -15,7 +15,9 @@ export default function Blogs({ allPostsData }) {
 
   return (
     <Layout>
-      <Heading mb="50px">Blogs</Heading>
+      <Heading mb="50px" letterSpacing="wide">
+        Blogs
+      </Heading>
       {allPostsData.map(({ id, date, title }, index) => (
         <Section
           delayDuration={

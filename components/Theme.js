@@ -15,8 +15,8 @@ const config = {
 };
 
 const fonts = {
-  heading: "M PLUS Rounded 1c, sans-serif",
-  body: "M PLUS Rounded 1c, sans-serif ",
+  heading: "monospace, sans-serif",
+  body: "Nunito, sans-serif",
 };
 
 const breakpoints = {
