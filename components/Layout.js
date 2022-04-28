@@ -9,13 +9,14 @@ import { OrbitControls } from "@react-three/drei";
 
 import Model from "./Model";
 
-const layout = ({ children }) => {
+const layout = ({ children, display = "block" }) => {
   return (
     <Container maxW="container.md" boxSizing="initial" overflowX="hidden">
       <Nav />
 
       <Container maxW="container.sm" overflowX="hidden">
-        <Box height="300px" mt="80px">
+        <Box mt="80px" />
+        <Box height="300px" display={display}>
           <Canvas camera={{ position: [-20, 2, 5], fov: 20 }}>
             <OrbitControls enableZoom={true} />
             <ambientLight intensity={0.8} />

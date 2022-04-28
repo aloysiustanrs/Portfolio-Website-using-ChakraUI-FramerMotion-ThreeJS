@@ -6,7 +6,9 @@ import { Grid, Heading } from "@chakra-ui/react";
 const Projects = () => {
   return (
     <Layout>
-      <Heading mb="50px" letterSpacing="wide">Projects</Heading>
+      <Heading mb="50px" letterSpacing="wide">
+        Projects
+      </Heading>
       <Grid
         templateColumns={{ base: "repeat(1)", md: "repeat(2, 1fr)" }}
         gap={10}
@@ -20,19 +22,19 @@ const Projects = () => {
         <ProjectItem
           delayDuration="0.2"
           heading="Project 2 "
-          image="black"
+          image="profile"
           text="Qui ullamco et sit eiusmod reprehenderit minim."
         />
         <ProjectItem
           delayDuration="0.3"
           heading="Project 3"
-          image="black"
+          image="profile"
           text="Elit est enim aliquip magna do culpa sint est esse eiusmod quis Lorem.Elit est enim aliquip magna do culpa sint est esse eiusmod quis Lorem."
         />
         <ProjectItem
           delayDuration="0.4"
           heading="Project 4"
-          image="black"
+          image="profile"
           text="Quis esse magna incididunt ut duis voluptate minim do."
         />
       </Grid>

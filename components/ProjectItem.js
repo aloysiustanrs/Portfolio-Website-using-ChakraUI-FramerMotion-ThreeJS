@@ -25,7 +25,12 @@ const ProjectItem = (props) => {
           />
 
           <Box width={{ xs: "300px", md: "full" }}>
-            <Heading py={{ base: "20px", md: "10px" }} size="md">
+            <Heading
+              py={{ base: "20px", md: "10px" }}
+              pt={{ md: "20px" }}
+              size="md"
+              fontFamily="Nunito"
+            >
               {props.heading}
             </Heading>
             <Text fontSize="14px">{props.text}</Text>
