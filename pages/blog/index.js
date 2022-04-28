@@ -13,7 +13,7 @@ const Blog = ({ posts }) => {
   }
 
   const borderColor = useColorModeValue("gray.400", "#71809626");
-  const backgroundColor = useColorModeValue("#cbd5e0", "171c24");
+  const backgroundColor = useColorModeValue("#cbd5e0", "#171c24");
   return (
     <Layout>
       <Heading mb="50px" letterSpacing="wide">

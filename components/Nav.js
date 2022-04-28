@@ -79,10 +79,7 @@ const Nav = () => {
 
         {/* Hamburger icon */}
 
-        <Box
-          display={{ base: "inline-block", md: "none" }}
-          pr={{ base: "10px", md: "none" }}
-        >
+        <Box display={{ base: "inline-block", md: "none" }}>
           <ThemeToggleButton display={{ base: "inline-block", md: "none" }} />
           <Menu>
             {({ isOpen }) => (
@@ -97,21 +94,10 @@ const Nav = () => {
                 ></MenuButton>
                 <MenuList>
                   <NextLink href="/projects" passHref>
-                    <MenuItem
-                      as="a"
-                      bgColor={router.pathname == "/projects" && linkColor}
-                    >
-                      Projects
-                    </MenuItem>
+                    <MenuItem as="a">Projects</MenuItem>
                   </NextLink>
                   <NextLink href="/blog" passHref>
-                    <MenuItem
-                      as="a"
-                      bgColor={router.pathname == "/blog" && linkColor}
-                      style={{}}
-                    >
-                      Blog
-                    </MenuItem>
+                    <MenuItem as="a">Blog</MenuItem>
                   </NextLink>
                 </MenuList>
               </>

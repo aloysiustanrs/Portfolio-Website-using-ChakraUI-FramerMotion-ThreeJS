@@ -65,7 +65,7 @@ const NameAndImage = () => {
             my={{ base: "30px", md: "0" }}
             borderRadius="full"
             boxSize="180px"
-            src="/images/profile.jpg"
+            src="profile.jpg"
             alt="Aloysius Tan"
           />
         </Box>

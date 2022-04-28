@@ -16,25 +16,25 @@ const Projects = () => {
         <ProjectItem
           delayDuration="0.1"
           heading="Project 1"
-          image="profile"
+          image="profile.jpg"
           text="Ullamco consectetur consequat magna ex mollit in anim cupidatat."
         />
         <ProjectItem
           delayDuration="0.2"
           heading="Project 2 "
-          image="profile"
+          image="profile.jpg"
           text="Qui ullamco et sit eiusmod reprehenderit minim."
         />
         <ProjectItem
           delayDuration="0.3"
           heading="Project 3"
-          image="profile"
+          image="profile.jpg"
           text="Elit est enim aliquip magna do culpa sint est esse eiusmod quis Lorem.Elit est enim aliquip magna do culpa sint est esse eiusmod quis Lorem."
         />
         <ProjectItem
           delayDuration="0.4"
           heading="Project 4"
-          image="profile"
+          image="profile.jpg"
           text="Quis esse magna incididunt ut duis voluptate minim do."
         />
       </Grid>
