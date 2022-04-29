@@ -53,7 +53,12 @@ const NameAndImage = () => {
           </Heading>
 
           <Section delayDuration="0">
-            <Heading fontSize="md" letterSpacing="wide" pt={4}>
+            <Heading
+              fontSize="18px"
+              letterSpacing="wide"
+              fontWeight="medium"
+              pt={4}
+            >
               Software Engineer
             </Heading>
           </Section>

@@ -11,9 +11,9 @@ const About = () => {
         </Heading>
         <Text pr="40px" pt="30px" lineHeight={"30px"}>
           Aloysius is a software engineer from Singapore with a passion to learn
-          new technologies and work on projects. He also loves problem-solving
-          questions from sites such as Leetcode. Other than programming, he
-          likes to play online video games.
+          new technologies and work on projects. He also loves to practice
+          solving coding problems from sites such as Leetcode. Other than
+          programming, he likes to play online video games.
         </Text>
       </Box>
     </Section>

@@ -1,5 +1,6 @@
 import React from "react";
 import NextLink from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import {
   Box,
@@ -14,7 +15,10 @@ import {
   MenuList,
   MenuItem,
   useColorModeValue,
+  Text,
 } from "@chakra-ui/react";
+
+import NavLinks from "./NavLinks";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { CloseIcon } from "@chakra-ui/icons";
@@ -37,15 +41,18 @@ const Nav = () => {
       <Flex justifyContent={"space-between"} alignItems="center">
         {/* Nav Brand */}
         <Heading
-          fontSize={"3xl"}
-          fontWeight={"bold"}
+          fontSize="25px"
+          fontWeight="medium"
+          lineHeight="40px"
           letterSpacing="wider"
-          bgGradient={"linear(to-r,red.300,red.500,red.300)"}
-          bgClip="text"
-          userSelect="none"
         >
           <NextLink href="/" passHref>
-            <Link>ALOYSIUS</Link>
+            <Link scroll={false} style={{ textDecoration: "none" }}>
+              <NavLinks>
+                <Text mr="10px"> ALOYSIUS</Text>
+                <Image src="/logo.png" width={40} height={35} alt="logo" />
+              </NavLinks>
+            </Link>
           </NextLink>
         </Heading>
 
@@ -58,8 +65,9 @@ const Nav = () => {
               py="8px"
               borderRadius="5px"
               userSelect="none"
+              style={{ textDecoration: "none" }}
             >
-              Projects
+              <NavLinks> Projects</NavLinks>
             </Link>
           </NextLink>
           <NextLink href="/blog" passHref>
@@ -69,8 +77,9 @@ const Nav = () => {
               py="8px"
               borderRadius="5px"
               userSelect="none"
+              style={{ textDecoration: "none" }}
             >
-              Blog
+              <NavLinks>Blog</NavLinks>
             </Link>
           </NextLink>
 
