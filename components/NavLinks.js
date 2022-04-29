@@ -4,13 +4,10 @@ import styled from "@emotion/styled";
 // For hover style of nav links
 
 const NavBox = styled.span`
-  color: white !important;
   text-decoration: none;
   cursor: pointer;
   user-select: none;
   position: relative;
-  padding-bottom: 6px;
-
   display: inline-flex;
   align-items: center;
 
