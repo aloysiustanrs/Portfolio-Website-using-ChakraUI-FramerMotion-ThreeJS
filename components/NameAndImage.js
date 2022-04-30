@@ -67,6 +67,7 @@ const NameAndImage = () => {
       <Section delayDuration="0">
         <Box display={{ base: "flex", md: "block" }} justifyContent="center">
           <Image
+            border="solid 2px grey"
             my={{ base: "30px", md: "0" }}
             borderRadius="full"
             boxSize="180px"

@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-// For hover style of nav links
-
 const NavBox = styled.span`
   text-decoration: none;
   cursor: pointer;
@@ -11,14 +9,12 @@ const NavBox = styled.span`
   display: inline-flex;
   align-items: center;
 
-  img {
-    opacity: 0;
-    transition: 100ms ease;
-  }
-  &:hover img {
-    opacity: 1;
-    transform: rotate(20deg);
-  }
+  // img {
+  //   transition: 100ms ease;
+  // }
+  // &:hover img {
+  //   transform: rotate(20deg);
+  // }
 
   &::before {
     position: absolute;

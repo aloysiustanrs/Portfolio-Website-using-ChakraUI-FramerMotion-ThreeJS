@@ -49,8 +49,68 @@ const Nav = () => {
           <NextLink href="/" passHref>
             <Link scroll={false} style={{ textDecoration: "none" }}>
               <NavLinks>
-                <Text mr="10px"> ALOYSIUS</Text>
-                <Image src="/logo.png" width={40} height={35} alt="logo" />
+                <Text
+                  fontFamily="'M PLUS Rounded 1c', sans-serif"
+                  fontSize="20px"
+                  letterSpacing="tighter"
+                  css={`
+                    & {
+                      color: transparent;
+                      background: linear-gradient(
+                        90deg,
+                        rgb(30, 30, 30) 0%,
+                        rgb(51, 51, 51) 10%,
+                        rgb(102, 102, 102) 20%,
+                        rgb(153, 153, 153) 30%,
+                        rgb(204, 204, 204) 40%,
+                        rgb(240, 240, 240) 50%,
+                        rgb(204, 204, 204) 60%,
+                        rgb(153, 153, 153) 70%,
+                        rgb(102, 102, 102) 80%,
+                        rgb(51, 51, 51) 90%,
+                        rgb(30, 30, 30) 100%
+                      );
+                      background-size: 200% auto;
+                      -webkit-background-clip: text;
+                      background-clip: text;
+                      animation: move 4s linear infinite, hide 4s 4s infinite,
+                        unhide 4s 4s infinite;
+                    }
+
+                    @keyframes move {
+                      to {
+                        background-position: -200% 0;
+                      }
+                    }
+
+                    @keyframes hide {
+                      0% {
+                        opacity: 1;
+                      }
+                      0.01% {
+                        opacity: 0;
+                      }
+                      100% {
+                        opacity: 0;
+                      }
+                    }
+
+                    @keyframes unhide {
+                      0% {
+                        opacity: 0;
+                      }
+                      0.01% {
+                        opacity: 1;
+                      }
+                      100% {
+                        opacity: 1;
+                      }
+                    }
+                  `}
+                >
+                  Aloysius Tan
+                </Text>
+                {/* <Image src="/logo.png" width={40} height={35} alt="logo" /> */}
               </NavLinks>
             </Link>
           </NextLink>
@@ -102,6 +162,9 @@ const Nav = () => {
                   ml={3}
                 ></MenuButton>
                 <MenuList>
+                  <NextLink href="/" passHref>
+                    <MenuItem as="a">About</MenuItem>
+                  </NextLink>
                   <NextLink href="/projects" passHref>
                     <MenuItem as="a">Projects</MenuItem>
                   </NextLink>
