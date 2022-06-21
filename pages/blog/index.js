@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/Layout";
-import { Box, Text, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
+import { Box, Text, Heading, useColorModeValue } from "@chakra-ui/react";
 import { Section } from "../../components/Section";
 
 const Blog = ({ posts }) => {

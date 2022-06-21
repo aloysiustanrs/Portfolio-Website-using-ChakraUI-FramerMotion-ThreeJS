@@ -13,8 +13,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import Image from "next/image";
+import Header from "../../components/Header";
+import Carousel from "../../components/Carousel";
 
-const components = { SyntaxHighlighter };
+const components = { SyntaxHighlighter, Image, Header, Carousel };
 
 const PostPage = ({ frontMatter: { title, date }, mdxSource, content }) => {
   const readingTime = require("reading-time");
