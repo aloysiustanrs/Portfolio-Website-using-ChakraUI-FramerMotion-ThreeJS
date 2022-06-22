@@ -15,11 +15,12 @@ const Projects = () => {
       >
         <ProjectItem
           delayDuration="0.1"
-          heading="Project 1"
-          image="profile.jpg"
-          text="Ullamco consectetur consequat magna ex mollit in anim cupidatat."
+          heading="AllCrypto Website"
+          image="allcrypto.png"
+          text="Crypto website created using React with data extracted from CoinGecko API and news API"
+          link="https://allcrypto.netlify.app/"
         />
-        <ProjectItem
+        {/* <ProjectItem
           delayDuration="0.2"
           heading="Project 2 "
           image="profile.jpg"
@@ -36,7 +37,7 @@ const Projects = () => {
           heading="Project 4"
           image="profile.jpg"
           text="Quis esse magna incididunt ut duis voluptate minim do."
-        />
+        /> */}
       </Grid>
     </Layout>
   );
