@@ -2,7 +2,7 @@
 title: Voxel Art & ThreeJS
 date: "April 28, 2022"
 description: Learn how I created my own voxel art and imported it into my website
-thumbnailUrl: "/voxelart.jpg"
+thumbnailUrl: "/voxelart/voxelart.jpg"
 ---
 
 <div style={{ display: "flex", justifyContent: "center" }}>
@@ -17,8 +17,7 @@ thumbnailUrl: "/voxelart.jpg"
 <br />
 
 <div>
-  In this blog, I will share how I created my personal voxel art as well as how
-  I integrated the art into my website.
+  In this blog, I will share how I created my personal voxel art as well as how I integrated the art into my website.
 </div>
 
 <br />
@@ -26,7 +25,7 @@ thumbnailUrl: "/voxelart.jpg"
 <Header text="Creating the voxel art"></Header>
 <br />
 <div>
-  In order to create, the voxel art , I downloaded a software named 'MagicaVoxel' from this link : <u><a href="https://ephtracy.github.io/">MagicaVoxel</a></u> 
+  In order to create, the voxel art , I downloaded a software named 'MagicaVoxel' from this link : <u><a href="https://ephtracy.github.io/">MagicaVoxel</a></u>.
   <br/>
   After downloading MagicaVoxel , watch this 2 minute <u><a href="https://www.youtube.com/watch?v=26YyDYgBRuM">tutorial</a></u> to learn how to use MagicaVoxel software.
   <br/>
@@ -34,13 +33,13 @@ thumbnailUrl: "/voxelart.jpg"
   <br/>
   <Carousel
     links={[
-      "/blog-images/voxel1.jpg",
-      "/blog-images/voxel2.jpg",
-      "/blog-images/voxel3.jpg",
-      "/blog-images/voxel4.jpg",
-      "/blog-images/voxel5.jpg",
-      "/blog-images/voxel6.jpg",
-      "/blog-images/voxel7.jpg",
+      "/blog-images/voxelart/voxel1.jpg",
+      "/blog-images/voxelart/voxel2.jpg",
+      "/blog-images/voxelart/voxel3.jpg",
+      "/blog-images/voxelart/voxel4.jpg",
+      "/blog-images/voxelart/voxel5.jpg",
+      "/blog-images/voxelart/voxel6.jpg",
+      "/blog-images/voxelart/voxel7.jpg",
     ]}
   />
 </div>
@@ -50,20 +49,164 @@ thumbnailUrl: "/voxelart.jpg"
 <Header text="Exporting and converting voxel file format"></Header>
 <br />
 <div>
-
-</div>
-
+1. Save voxel art as .vox file.
+<br />
+2. Convert .vox file to .glb file using <u><a href="https://www.blender.org/">Blender</a></u> or any other file conversion softwares.
+<br />
+3. Use this <u><a href="https://github.com/CesiumGS/gltf-pipeline">GLTF pipeline</a></u> to convert a glb to glTF , then convert a glTF to Draco glTF.
+<br />
 <SyntaxHighlighter language="javascript">
   {`
-    const doStuff = () => {
-      return console.log('hey')
-    }
+    npm install -g gltf-pipeline
+    //Install the pipeline using NPM
   `}
 </SyntaxHighlighter>
+<br />
+<SyntaxHighlighter language="javascript">
+  {`
+    gltf-pipeline -i model.glb -o model.gltf
+    //converts glb to glTF
+  `}
+</SyntaxHighlighter>
+<br />
+<SyntaxHighlighter language="javascript">
+  {`
+    gltf-pipeline -i model.gltf -o modelDraco.gltf -d
+    //converts glTF to Draco glTF
+  `}
+</SyntaxHighlighter>
+<br />
+4. We convert the Draco glTF to a JSX component so that it can be rendered into the website using <u><a href="https://github.com/pmndrs/gltfjsx">gltfjsx</a></u>.
+<br />
+<SyntaxHighlighter language="javascript">
+  {`
+    npx gltfjsx model.gltf
+    //converts glTF to JSX component
+  `}
+</SyntaxHighlighter>
+<br />
+</div>
 
-```
-  // this is a code block
-  const doSomething = () => {
-    return console.log('hey')
-  }
-```
+<br />
+
+<Header text="Creating the model"></Header>
+<br />
+<div>
+  In order to create the model , we have to install some NPM packages.
+  <br />
+  <u><a href="https://threejs.org/">ThreeJS</a></u> is an API used to create and display animated 3D computer graphics in a web browser using WebGL.
+  <br />
+  <u><a href="https://github.com/pmndrs/react-three-fiber">React-Three-Fiber</a></u> is a react renderer for Three.js which makes it easy to use threeJS.
+  <br />
+  <u><a href="https://github.com/pmndrs/drei">React-Three-Drei</a></u> add-ons for React-Three-Fiber. 
+  <br />
+<SyntaxHighlighter language="javascript">
+  {`
+    npm install three @react-three/fiber @react-three/drei timer-node
+  `}
+</SyntaxHighlighter>
+<br />
+  After installing the packages , we can create our model.
+<br />
+  First we create can create a **Model.js** file and then we can add the code for our model.
+  <br />
+  <SyntaxHighlighter language="javascript">
+  {`
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+
+export default function Model({ ...props }) {
+
+  //Timer to animate the spin in transition using timer-node NPM package
+  const { Timer } = require("timer-node");
+  const timer = new Timer({ label: "test-timer" });
+
+  timer.start();
+
+  let spinSlow = () => (group.current.rotation.y += 0.3);
+  let spinFast = () => (group.current.rotation.y += 0.005);
+  useFrame(() => {
+    if (timer.ms() < 200) {
+      spinSlow();
+    } else {
+      spinFast();
+    }
+  });
+
+  const group = useRef();
+  const { nodes, materials } = useGLTF("/model.gltf");
+  return (
+
+    //Code that creates the model as well as the camera position and view
+    <group ref={group} {...props} dispose={null}>
+      <mesh
+        geometry={nodes.new002.geometry}
+        material={materials["palette.003"]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.23}
+        position-y={-2.5}
+      />
+    </group>
+  );
+}
+
+useGLTF.preload("/model.gltf");
+  `}
+</SyntaxHighlighter>
+</div>
+
+<br />
+
+<Header text="Create canvas and use model"></Header>
+<br />
+<div>
+We can create a **VoxelArt.js** file as a component.
+<br />
+<SyntaxHighlighter language="javascript">
+  {`
+import React from "react";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import Model from "./Model";
+
+const VoxelArt = () => {
+  return (
+    // Create canvas with the model created
+    // Able to adjust camera position and lighting
+    // Includes orbit controls when users move the model with cursor
+    <Canvas camera={{ position: [-20, 2, 5], fov: 20 }}>
+      <OrbitControls enableZoom={true} />
+      <ambientLight intensity={0.8} />
+      <directionalLight position={[0, 3, 2]} />
+      <Suspense fallback={null}>
+        <Model />
+      </Suspense>
+    </Canvas>
+  );
+};
+
+export default VoxelArt;
+
+  `}
+</SyntaxHighlighter>
+<br />
+The **VoxelArt.js** component can now be used anywhere in the React app.
+
+<br />
+
+
+This is how my homepage looks like with the voxel art.
+<br />
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<br />
+  <Image
+    src="/blog-images/voxelart.jpg"
+    alt="Picture of the author"
+    width={500}
+    height={250}
+  />
+</div>
+</div>

@@ -16,6 +16,7 @@ import React from "react";
 import Image from "next/image";
 import Header from "../../components/Header";
 import Carousel from "../../components/Carousel";
+import Footer from "../../components/Footer";
 
 const components = { SyntaxHighlighter, Image, Header, Carousel };
 
@@ -39,6 +40,10 @@ const PostPage = ({ frontMatter: { title, date }, mdxSource, content }) => {
       </Box>
 
       <MDXRemote {...mdxSource} components={components} />
+
+      <Box mt="100px">
+        <Footer />
+      </Box>
     </Layout>
   );
 };

@@ -22,6 +22,7 @@ const Carousel = ({ links }) => {
       mouseTracking
       autoPlay
       autoPlayInterval={1000}
+      infinite="True"
       items={items}
     />
   );
