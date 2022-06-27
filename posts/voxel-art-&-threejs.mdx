@@ -5,14 +5,14 @@ description: Learn how I created my own voxel art and imported it into my websit
 thumbnailUrl: "/voxelart/voxelart.jpg"
 ---
 
-<div style={{ display: "flex", justifyContent: "center" }}>
+
   <Image
     src="/blog-images/voxelart/voxelart.jpg"
     alt="voxelart"
     width={500}
     height={250}
   />
-</div>
+
 
 <br />
 
@@ -22,12 +22,12 @@ thumbnailUrl: "/voxelart/voxelart.jpg"
 
 <br />
 
-<Header text="Creating the voxel art"></Header>
+<Header>Creating the voxel art</Header>
 <br />
 <div>
-  In order to create, the voxel art , I downloaded a software named 'MagicaVoxel' from this link : <u><a href="https://ephtracy.github.io/">MagicaVoxel</a></u>.
+  In order to create, the voxel art , I downloaded a software named 'MagicaVoxel' from this link : <TextWithLink text="MagicaVoxel" link="https://ephtracy.github.io/"/>.
   <br/>
-  After downloading MagicaVoxel , watch this 2 minute <u><a href="https://www.youtube.com/watch?v=26YyDYgBRuM">tutorial</a></u> to learn how to use MagicaVoxel software.
+  After downloading MagicaVoxel , watch this 2 minute <TextWithLink text="tutorial" link="https://www.youtube.com/watch?v=26YyDYgBRuM"/> to learn how to use MagicaVoxel software.
   <br/>
   This is how I progressed creating the voxel art.
   <br/>
@@ -46,14 +46,14 @@ thumbnailUrl: "/voxelart/voxelart.jpg"
 
 <br />
 
-<Header text="Exporting and converting voxel file format"></Header>
+<Header>Exporting and converting voxel file format</Header>
 <br />
 <div>
   &nbsp;1. Save voxel art as .vox file.
 <br />
-  &nbsp;2. Convert .vox file to .glb file using <u><a href="https://www.blender.org/">Blender</a></u> or any other file conversion softwares.
+  &nbsp;2. Convert .vox file to .glb file using <TextWithLink text="Blender" link="https://www.blender.org/"/> or any other file conversion softwares.
 <br />
-  &nbsp;3. Use this <u><a href="https://github.com/CesiumGS/gltf-pipeline">GLTF pipeline</a></u> to convert a glb to glTF , then convert a glTF to Draco glTF.
+  &nbsp;3. Use this <TextWithLink text="GLTF pipeline" link="https://github.com/CesiumGS/gltf-pipeline"/> to convert a glb to glTF , then convert a glTF to Draco glTF.
 <br />
 <SyntaxHighlighter language="javascript">
   {`
@@ -76,7 +76,7 @@ thumbnailUrl: "/voxelart/voxelart.jpg"
   `}
 </SyntaxHighlighter>
 <br />
-  &nbsp;4. We convert the Draco glTF to a JSX component so that it can be rendered into the website using <u><a href="https://github.com/pmndrs/gltfjsx">gltfjsx</a></u>.
+  &nbsp;4. We convert the Draco glTF to a JSX component so that it can be rendered into the website using <TextWithLink text="gltfjsx" link="https://github.com/pmndrs/gltfjsx"/>.
 <br />
 <SyntaxHighlighter language="javascript">
   {`
@@ -89,16 +89,16 @@ thumbnailUrl: "/voxelart/voxelart.jpg"
 
 <br />
 
-<Header text="Creating the model"></Header>
+<Header>Creating the model</Header>
 <br />
 <div>
   In order to create the model , we have to install some NPM packages.
   <br />
-  <u><a href="https://threejs.org/">ThreeJS</a></u> is an API used to create and display animated 3D computer graphics in a web browser using WebGL.
+  <TextWithLink text="ThreeJS" link="https://threejs.org/"/> is an API used to create and display animated 3D computer graphics in a web browser using WebGL.
   <br />
-  <u><a href="https://github.com/pmndrs/react-three-fiber">React-Three-Fiber</a></u> is a react renderer for Three.js which makes it easy to use threeJS.
+  <TextWithLink text="React-Three-Fiber" link="https://github.com/pmndrs/react-three-fiber"/> is a react renderer for Three.js which makes it easy to use threeJS.
   <br />
-  <u><a href="https://github.com/pmndrs/drei">React-Three-Drei</a></u> add-ons for React-Three-Fiber. 
+  <TextWithLink text="React-Three-Drei" link="https://github.com/pmndrs/drei"/> add-ons for React-Three-Fiber. 
   <br />
 <SyntaxHighlighter language="javascript">
   {`
@@ -158,7 +158,7 @@ useGLTF.preload("/model.gltf");
 
 <br />
 
-<Header text="Create canvas and use model"></Header>
+<Header>Create canvas and use model</Header>
 <br />
 <div>
   We can create a **VoxelArt.js** file as a component.
@@ -200,7 +200,7 @@ The **VoxelArt.js** component can now be used anywhere in the React app.
 This is how my homepage looks like with the voxel art.
 <br />
 
-<div style={{ display: "flex", justifyContent: "center" }}>
+
 <br />
   <Image
     src="/blog-images/voxelart/homepage.png"
@@ -208,5 +208,5 @@ This is how my homepage looks like with the voxel art.
     width={400}
     height={500}
   />
-</div>
+
 </div>

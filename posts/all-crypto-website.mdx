@@ -1,0 +1,176 @@
+---
+title: All Crypto React Website
+date: "June 24, 2022"
+description: Learn how I created my own React website which extracts and displays informative crypto API data
+thumbnailUrl: "/allcrypto/home.png"
+---
+Link: <TextWithLink text="https://allcrypto.netlify.app/" link="https://allcrypto.netlify.app/" /> 
+\
+\
+In this blog, I will share how I created my my own React website which extracts and display informative crypto API data.
+\
+\
+If there is any information that is unclear in this blog, you can refer to my Github repository of this project: <TextWithLink text="Github Link" link="https://github.com/aloysiustanrs/all-crypto" /> 
+
+<br />
+
+<Image
+  src="/blog-images/allcrypto/cryptolist.png"
+  alt="voxelart"
+/>
+
+
+<Horizontal />
+
+<Header>Learning Material UI (MUI)</Header>
+<br />
+<SubHeader>Why do I use MUI ?</SubHeader>
+<br />
+<TextWithLink text="Material UI" link="https://mui.com/" /> is an open-source React
+component library by Google.
+<br />
+I use Material UI because it has beautiful prebuilt components. They also have components
+functionalities which would be troublesome to create from scratch.
+<br />
+<SubHeader>How to use MUI ?</SubHeader>
+<br />
+<SyntaxHighlighter>
+  {`
+    npm install @mui/material @emotion/react @emotion/styled
+    //Install MUI using NPM
+  `}
+</SyntaxHighlighter>
+<br />
+I learnt how to use MUI by reading the documentation and trying it out and playing
+around with the code. There are also alot of youtube videos on how to use MUI on
+youtube, eg. <TextWithLink
+  text="Material UI Tutorial by The Net Ninja"
+  link="https://youtube.com/playlist?list=PL4cUxeGkcC9gjxLvV4VEkZ6H6H4yWuS58"
+/>
+
+<Horizontal />
+
+<Header>APIs used for this website</Header>
+<br />
+<SubHeader>
+  <TextWithLink text="CoinGecko API" link="https://www.coingecko.com/en/api" />
+</SubHeader>
+<br />
+CoinGecko is the world’s largest independent source of reliable cryptocurrency data.
+\
+\
+Their API is 100% free, is publicly available and does not require fees and the free plan has a rate limit of 50 calls/minute which is more than
+enough for this personal project.
+\
+\
+Using this API, I will be able to access free cryptocurrency data to display on my website
+<br />
+<SubHeader>
+  <TextWithLink text="GNews API" link="https://gnews.io/" />
+</SubHeader>
+<br />
+GNews is a simple API to search and collect news and blog articles.
+\
+\
+I will be using the free plan which has up to 100 requests per day which will be sufficient enough for this personal project.
+\
+\
+Unfortunately, only up to 10 articles will be returned per request, but it does not matter as I will still be able to create the news page with 10 articles. 
+
+<Horizontal />
+
+<Header>Creating the Homepage</Header>
+<br />
+<Image
+  src="/blog-images/allcrypto/homepage.png"
+  alt="voxelart"
+/>
+<br />
+The first page show when the website is loaded is the homepage.
+\
+\
+The homepage is basically a summary of :
+\
+&nbsp; 1. Global Stats of cryptocurrency markets
+\
+&nbsp; 2. Top 10 Cryptocurrency coins by their market cap*
+\
+&nbsp; 3. Top 3 Cryptocurrency news 
+\
+\
+*Added the top 10 coins into a <TextWithLink text="AliceCarousel" link="https://github.com/maxmarinich/react-alice-carousel" /> so that theyare moving every second and it looks aesthetically pleasing :)
+
+<Horizontal />
+
+<Header>Creating the Coin List, Exchanges and News Pages</Header>
+<br />
+<SubHeader>
+Coin List Page
+</SubHeader>
+Created using <TextWithLink text="MUI's table component" link="https://mui.com/material-ui/react-table/" /> so that I can display the coins according to market cap showing their : Price, Market Cap, 24h % Change, 7d % Change and 24h Volume.
+<br />
+<SubHeader>
+Exchanges Page
+</SubHeader>
+Created using <TextWithLink text="MUI's table component" link="https://mui.com/material-ui/react-table/" /> to show list of exchanges and their rankings based on trust score, followed by 24h Volume.
+<br />
+<SubHeader>
+News Page
+</SubHeader>
+Created using <TextWithLink text="MUI's card component" link="https://mui.com/material-ui/react-card/" /> to display the latest cryptocurrency articles.
+<br />
+Before mapping the data onto the page, the data are filtered according to some variable (eg. name and symbol for the coin list) by the input entered into the search bar.
+\
+\
+Then, the filtered data is sliced to make the pagination component work for each page to display only 10 results.
+
+<Horizontal />
+
+<Header>Creating the Coin Page</Header>
+<br />
+The individual coin page can be accessed by clicking on any of the coins in the coin list page or the homepage.
+<br />
+<SubHeader>
+Coin Data
+</SubHeader>
+<Image
+  src="/blog-images/allcrypto/coindata.png"
+  alt="voxelart"
+/>
+<br />
+Under the coin data section, I have included important information on the coin such as the coin's data and their socials which was easily done by scraping from the individual coin data endpoint.
+<SubHeader>
+Coin Chart
+</SubHeader>
+<Image
+  src="/blog-images/allcrypto/coinchart.png"
+  alt="voxelart"
+/>
+<br/>
+<SyntaxHighlighter>
+  {`
+    npm install react-chartjs-2 chart.js
+  `}
+</SyntaxHighlighter>
+<br/>
+After installing the packages for the chart, we have to retreive data from the historical data endpoint.
+\
+\
+Depending on which toggle button is selected, the historical data will be searched based on the time period selected.
+\
+\
+For example, if '1 year' is selected, historical data from 1 year back to now will be fetched and displayed on the chart.
+\
+\
+I used a line chart as is an appropriate chart type to display cryptocurrency prices.
+
+<Horizontal />
+
+<Header>Firebase Integration</Header>
+<SubHeader>
+Authentication
+</SubHeader>
+
+<SubHeader>
+Firestore Database
+</SubHeader>

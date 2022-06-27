@@ -15,7 +15,7 @@ const Projects = () => {
       >
         <ProjectItem
           delayDuration="0.1"
-          heading="AllCrypto Website"
+          heading="All Crypto React Website"
           image="allcrypto.png"
           text="Crypto website created using React with data extracted from CoinGecko API and news API"
           link="https://allcrypto.netlify.app/"

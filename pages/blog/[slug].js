@@ -3,7 +3,6 @@ import { MDXRemote } from "next-mdx-remote";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import SyntaxHighlighter from "react-syntax-highlighter";
 import Layout from "../../components/Layout";
 import {
   Heading,
@@ -13,12 +12,24 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import Image from "next/image";
-import Header from "../../components/Header";
-import Carousel from "../../components/Carousel";
+import Header from "../../components/blog/Header";
+import SubHeader from "../../components/blog/SubHeader";
+import Carousel from "../../components/blog/Carousel";
 import Footer from "../../components/Footer";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import TextWithLink from "../../components/blog/TextWithLink";
+import Horizontal from "../../components/blog/Horizontal";
+import Image from "../../components/blog/Image";
 
-const components = { SyntaxHighlighter, Image, Header, Carousel };
+const components = {
+  SyntaxHighlighter,
+  Image,
+  Header,
+  SubHeader,
+  Carousel,
+  TextWithLink,
+  Horizontal,
+};
 
 const PostPage = ({ frontMatter: { title, date }, mdxSource, content }) => {
   const readingTime = require("reading-time");
