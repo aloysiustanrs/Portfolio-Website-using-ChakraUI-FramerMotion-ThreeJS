@@ -2,7 +2,7 @@
 title: All Crypto React Website
 date: "June 24, 2022"
 description: Learn how I created my own React website which extracts and displays informative crypto API data
-thumbnailUrl: "/allcrypto/home.png"
+thumbnailUrl: "/allcrypto/homepage.png"
 ---
 Link: <TextWithLink text="https://allcrypto.netlify.app/" link="https://allcrypto.netlify.app/" /> 
 \
@@ -153,7 +153,7 @@ Coin Chart
   `}
 </SyntaxHighlighter>
 <br/>
-After installing the packages for the chart, we have to retreive data from the historical data endpoint.
+After installing the packages for the chart, I retreived data from the historical data endpoint.
 \
 \
 Depending on which toggle button is selected, the historical data will be searched based on the time period selected.
@@ -166,11 +166,111 @@ I used a line chart as is an appropriate chart type to display cryptocurrency pr
 
 <Horizontal />
 
-<Header>Firebase Integration</Header>
+<Header><TextWithLink text="Firebase Integration" link="https://firebase.google.com/" /></Header>
+<SubHeader>
+What is Firebase?
+</SubHeader>
+Firebase is a Google-backed application development software that enables developers to develop iOS, Android and Web apps.
+\
+\
+I will use Firebase to authenticate my users and also create a database for them to save their favourite coins to add to their personal watchlist.
+\
+\
+First I installed firebase using NPM, then under project settings, there will be the code for our SDK setup and configuration.
+<br/>
+<Image
+  src="/blog-images/allcrypto/firebaseconfig.png"
+  alt="voxelart"
+  width = "400"
+/>
+<br/>
+Add the code into a **firebase-config.js** file + the two lines of code below 
+<br/>
+<SyntaxHighlighter>
+  {`
+    //Auth
+    export const auth = getAuth(app);
+    //Database
+    export const db = getFirestore(app);
+  `}
+</SyntaxHighlighter>
+
 <SubHeader>
 Authentication
 </SubHeader>
+When the user first opens the page, he is not logged in and 'LOGIN' button will be displayed on the top-right corner.
+<br/>
+<Image
+  src="/blog-images/allcrypto/loginbutton.png"
+  alt="voxelart"
 
+/>
+<br/>
+After clicking the 'LOGIN' button, a pop up will be shown for the user to login using email and password or sign in with Gmail.
+<br/>
+<Image
+  src="/blog-images/allcrypto/loginpopup.png"
+  alt="voxelart"
+
+/>
+<br/>
+This was done using Firebase Authentication where you can read more on their detailed documentation: <TextWithLink text="Link" link="https://firebase.google.com/docs/auth/web/start" />
+\
+\
+The image below show the list of users that are authenticated on the website.
+<Image
+  src="/blog-images/allcrypto/firebaseauthentication.png"
+  alt="voxelart"
+/>
 <SubHeader>
 Firestore Database
 </SubHeader>
+In order to create a watchlist for our users as shown below :
+<br/>
+<Image
+  src="/blog-images/allcrypto/cryptowatchlist.png"
+  alt="voxelart"
+/>
+<br/>
+<div style={{ display: "flex"}}>
+<Image
+  src="/blog-images/allcrypto/addtowatchlist.png"
+  alt="voxelart"
+/>
+<Image
+  src="/blog-images/allcrypto/removefromwatchlist.png"
+  alt="voxelart"
+/>
+</div>
+<br/>
+**Add coin to watchlist** : Go to the coin's page and click on the 'ADD TO WATCHLIST' button
+\
+\
+**Remove coin from watchlist** : Click on the bin icon on the watchlist / Go to the coin's page and click on the 'REMOVE FROM WATCHLIST' button
+<br/>
+<Image
+  src="/blog-images/allcrypto/firebasedatabase.png"
+  alt="voxelart"
+
+/>
+<br/>
+The image above shows the users and the coins in their watchlist.
+
+<Horizontal />
+
+<Header>Conclusion</Header>
+<SubHeader>
+What did I learn?
+</SubHeader>
+<div style={{marginLeft:"30px"}}>
+- Learn a new React component library : Material UI
+<br/>
+- Got more comfortable and improved in using React
+<br/>
+- Learnt how to use the UseContext hook to manage state more easily in my project
+<br/>
+- Learnt how to manage state more comfortably with UseState & UseEffect hook
+<br/>
+- Learnt what is Firebase and how to use its authentication and database
+</div>
+
