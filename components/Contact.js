@@ -1,4 +1,5 @@
 import React from "react";
+import NextLink from "next/link";
 import {
   Heading,
   Box,
@@ -61,6 +62,7 @@ const Contact = () => {
         <HStack
           justifyContent={{ base: "flex-start", linkTag: "center" }}
           marginTop="80px"
+          marginBottom="80px"
           overflowX="auto"
         >
           <LinkTag
@@ -79,7 +81,14 @@ const Contact = () => {
             href="https://github.com/aloysiustanrs"
           />
         </HStack>
+
+        <NextLink href="/resume" passHref>
+          <a style={{ textDecoration: "underline" }}>
+            Click here to see my resume!
+          </a>
+        </NextLink>
       </Box>
+
       <Divider
         width="70%"
         border="solid 1px"
