@@ -9,6 +9,7 @@ const Projects = () => {
       <Heading mb="50px" letterSpacing="wide">
         Projects
       </Heading>
+
       <Grid
         templateColumns={{ base: "repeat(1)", md: "repeat(2, 1fr)" }}
         gap={10}
@@ -20,12 +21,14 @@ const Projects = () => {
           text="Crypto website created using React with data extracted from CoinGecko API and news API"
           link="https://allcrypto.netlify.app/"
         />
-        {/* <ProjectItem
+        <ProjectItem
           delayDuration="0.2"
-          heading="Project 2 "
-          image="profile.jpg"
-          text="Qui ullamco et sit eiusmod reprehenderit minim."
+          heading="Discord Bot made with Python"
+          image="discord_bot.png"
+          text="Custom discord bot with multiple features coded in Python"
+          link="https://allcrypto.netlify.app/"
         />
+        {/*
         <ProjectItem
           delayDuration="0.3"
           heading="Project 3"

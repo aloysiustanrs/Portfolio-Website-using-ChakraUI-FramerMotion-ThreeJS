@@ -1,0 +1,81 @@
+---
+title: Discord Bot made with Python
+date: "September 29, 2022"
+description: Learn how I created my own custom discord bot using Python
+thumbnailUrl: "/discord_bot/discord_bot.png"
+---
+<iframe
+  width="100%"
+  height="315"
+  src="https://www.youtube.com/embed/y881t8ilMyc"
+  frameborder="0"
+  allowfullscreen
+></iframe>
+\
+In this blog, I will share how I created my my own discord bot using <TextWithLink text="discord.py" link="https://github.com/Rapptz/discord.py" /> which is a API wrapper for Discord so that I can create the discord API more easily with Python.
+\
+\
+If there is any information that is unclear in this blog, you can refer to my Github repository of this project: <TextWithLink text="Github Link" link="https://github.com/aloysiustanrs/all-crypto" /> or my youtube video above.
+
+<br />
+
+<Horizontal />
+
+<Header>Why am I creating a discord bot?</Header>
+
+&nbsp; 1. Practice my python skills
+
+&nbsp; 2. Create a bot which has customised features 
+
+&nbsp; 3. I can name the bot whatever I want :)
+
+<Horizontal />
+
+<Header>How to create discord bot?</Header>
+
+Go to <TextWithLink text="Discord Developer Portal" link="https://discord.com/developers/applications" /> and create a new application.
+<br />
+Go to 'Bot' tab and create a new bot, enabling all 'Privileged Gateway Intents'
+<br />
+Go to 'OAuth2' tab > General: Select the 'In-app Authorization' > Scopes: Select 'bot' & 'applications.commands' > Bot Permissions: Administrator
+<br />
+Go to 'OAuth2' tab > URL Generator > Scopes: Select 'bot' > Copy link and paste onto browser > Add the bot to your discord channel
+
+<Horizontal />
+
+<Header>Coding the bot</Header>
+
+In order to code the bot, I will be using the <TextWithLink text="discord.py" link="https://github.com/Rapptz/discord.py" /> so that it is easier to code out the discord bot in Python.
+<SubHeader>
+Features of the bot
+</SubHeader>
+&nbsp; 1. Anime recommendation 
+
+&nbsp; 2. Clear Messages
+
+&nbsp; 3. Play music
+
+<br />
+I will explain how I implement these features with the bot below.
+
+<Horizontal />
+
+<Header>Anime recommendation</Header>
+<SubHeader>
+Why this feature?
+</SubHeader>
+I have a discord channel with my friends and we like to watch anime. However, as a long time anime fan, I have already watched alot of anime.
+<br />
+Therefore, I thought of adding a feature to the discord bot where with one command, I can have a random anime recommended to me with all its details and I might consider watching it.
+<br />
+
+<SubHeader>
+How?
+</SubHeader>
+
+<Image
+  src="/blog-images/discord_bot/anime_code.png"
+  alt="voxelart"
+/>
+The c
+
