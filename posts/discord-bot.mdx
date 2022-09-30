@@ -8,8 +8,8 @@ thumbnailUrl: "/discord_bot/discord_bot.png"
   width="100%"
   height="315"
   src="https://www.youtube.com/embed/y881t8ilMyc"
-  frameborder="0"
-  allowfullscreen
+  frameBorder="0"
+  allowFullScreen
 ></iframe>
 \
 In this blog, I will share how I created my my own discord bot using <TextWithLink text="discord.py" link="https://github.com/Rapptz/discord.py" /> which is a API wrapper for Discord so that I can create the discord API more easily with Python.
@@ -75,7 +75,127 @@ How?
 
 <Image
   src="/blog-images/discord_bot/anime_code.png"
-  alt="voxelart"
+  alt="anime code"
 />
-The c
+<br />
+In order to obtain anime recommendations, I used the <TextWithLink text="Jikan API" link="https://jikan.moe/" /> which is an open-source API with anime data.
+<br />
+I will be using the random anime API endpoint which will display a list of data containing details from a random anime.
+<br />
+I used the <TextWithLink text="requests" link="https://requests.readthedocs.io/en/latest/" /> which extracts the *JSON* data from the API endpoint.
+<br / >
+From the data extracted, I will extract important details of the random anime(image, title, description, etc.) into their variables. 
+<br / >
+Then combine the details to a string, formatting it nicely, and return the string from the function.
+<br />
 
+<SubHeader>
+Results
+</SubHeader>
+
+<Image
+  src="/blog-images/discord_bot/anime_command.png"
+  alt="anime code"
+/>
+<br />
+After calling the '!anime' command, EeyoreBot replies with a 'One Piece' movie recommendation. Cool!
+
+
+<Horizontal/>
+
+<Header>Clear Messages</Header>
+
+<SubHeader>
+Why this feature?
+</SubHeader>
+
+<Image
+  src="/blog-images/discord_bot/delete_one.png"
+  alt="anime code"
+/>
+
+<br />
+
+Sometimes, channel become too messy with alot of messages. However there is no function to clear alot of messages at a time in discord. So I can only delete messages one at a time.
+
+<br />
+
+Therefore, this feature allows us to delete many messages with just a command.
+
+<SubHeader>Code</SubHeader>
+
+<Image
+  src="/blog-images/discord_bot/delete_code.png"
+  alt="Delete messages code"
+/>
+
+<br />
+
+In order to organise code, I created a 'Admin' Cog, which basically groups commands under a class.
+
+<br />
+
+After typing '!delete' command, the bot will ask 'Type 'yes' of you are sure' to prevent any accidental deletion.
+
+<br/ >
+
+Using discord.py's bot.wait_for function, the bot will wait for a message from the same channel and from the same person that called the command.
+
+<br />
+
+If response is ....
+- 'yes' &rarr; x number of messages ('limit' number in code) will be deleted using discord.py's channel.purge() function
+- *No messages* within 5 seconds &rarr; 'Time out! Request cancelled'
+- Message not 'yes' &rarr; 'Request cancelled'
+
+<SubHeader>Results</SubHeader>
+
+<div style={{display:'flex', gap:'5%'}}>
+
+<Image
+  src="/blog-images/discord_bot/delete_command.png"
+  alt="Delete messages code"
+/>
+
+<Image
+  src="/blog-images/discord_bot/deleted.png"
+  alt="Delete messages code"
+/>
+
+</div>
+
+<br />
+
+After typing the command '!delete', the bot will ask for confirmation and if 'yes' is replied the bot will delete 10 messages.
+
+<br />
+
+<Image
+  src="/blog-images/discord_bot/timeout_requestcancelled.png"
+  alt="Timeout and request cancelled"
+/>
+
+<br />
+
+No message sent within 5 seconds &rarr; 'Timeout! Request cancelled'
+
+<br />
+
+Any message that is not 'yes' &rarr; 'Request cancelled'
+
+<br />
+
+<Horizontal />
+
+<Header>Play Music</Header>
+
+<SubHeader>Why this feature?</SubHeader>
+
+Being able to listen to music with my friends while chilling
+
+<SubHeader>Prerequisites</SubHeader>
+
+- Install <TextWithLink text="PyNaCl" link="https://pypi.org/project/PyNaCl/" />
+- Add <TextWithLink text="FFMPEG" link="https://ffmpeg.org/" /> to Windows path using Environment variables by following this <TextWithLink text="guide" link="https://www.thewindowsclub.com/how-to-install-ffmpeg-on-windows-10" />
+
+<SubHeader>Code</SubHeader>
