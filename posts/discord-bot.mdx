@@ -46,6 +46,9 @@ Go to 'OAuth2' tab > URL Generator > Scopes: Select 'bot' > Copy link and paste 
 <Header>Coding the bot</Header>
 
 In order to code the bot, I will be using the <TextWithLink text="discord.py" link="https://github.com/Rapptz/discord.py" /> so that it is easier to code out the discord bot in Python.
+<br />
+Also use the <TextWithLink text="discord.py documentation" link="https://discordpy.readthedocs.io/en/latest/" /> to know what packages to have downloaded.
+
 <SubHeader>
 Features of the bot
 </SubHeader>
@@ -53,7 +56,7 @@ Features of the bot
 
 &nbsp; 2. Clear Messages
 
-&nbsp; 3. Play music
+&nbsp; 3. Play music with queue
 
 <br />
 I will explain how I implement these features with the bot below.
@@ -98,7 +101,7 @@ Results
   alt="anime code"
 />
 <br />
-After calling the '!anime' command, EeyoreBot replies with a 'One Piece' movie recommendation. Cool!
+After calling the '!anime' command, the bot replies with a 'One Piece' movie recommendation. Cool!
 
 
 <Horizontal/>
@@ -150,48 +153,61 @@ If response is ....
 
 <SubHeader>Results</SubHeader>
 
+<div style ={{border:'1px solid white',padding:'5%'}}>
+<h3>Default '!delete' &rarr; 10 messages deleted </h3>
+<br />
 <div style={{display:'flex', gap:'5%'}}>
-
 <Image
   src="/blog-images/discord_bot/delete_command.png"
   alt="Delete messages code"
 />
-
 <Image
   src="/blog-images/discord_bot/deleted.png"
   alt="Delete messages code"
 />
+</div>
+</div>
 
+<br />
+
+<div style ={{border:'1px solid white',padding:'5%'}}>
+<h3>'!delete x' &rarr; x messages deleted </h3>
+<br />
+<div style={{display:'flex', gap:'5%'}}>
+<Image
+  src="/blog-images/discord_bot/delete_count_command.png"
+  alt="Delete messages code"
+/>
+<Image
+  src="/blog-images/discord_bot/deleted_count.png"
+  alt="Delete messages code"
+/>
+</div>
 </div>
 
 <br />
 
 After typing the command '!delete', the bot will ask for confirmation and if 'yes' is replied the bot will delete 10 messages.
-
 <br />
-
 <Image
   src="/blog-images/discord_bot/timeout_requestcancelled.png"
   alt="Timeout and request cancelled"
 />
-
 <br />
-
 No message sent within 5 seconds &rarr; 'Timeout! Request cancelled'
-
 <br />
-
 Any message that is not 'yes' &rarr; 'Request cancelled'
-
 <br />
 
 <Horizontal />
 
-<Header>Play Music</Header>
+<Header>Play Music with queue</Header>
 
 <SubHeader>Why this feature?</SubHeader>
 
-Being able to listen to music with my friends while chilling
+I want to be able to play music in a discord voice channel.
+<br />
+On top of that I want to be able to queue a long list of songs and be able to edit that list so that I am abl to listen to many songs queued at once.
 
 <SubHeader>Prerequisites</SubHeader>
 
@@ -199,3 +215,95 @@ Being able to listen to music with my friends while chilling
 - Add <TextWithLink text="FFMPEG" link="https://ffmpeg.org/" /> to Windows path using Environment variables by following this <TextWithLink text="guide" link="https://www.thewindowsclub.com/how-to-install-ffmpeg-on-windows-10" />
 
 <SubHeader>Code</SubHeader>
+
+The code I used audio extraction using YTDL library was taken from <TextWithLink text="https://github.com/Rapptz/discord.py/blob/master/examples/basic_voice.py" link="https://github.com/Rapptz/discord.py/blob/master/examples/basic_voice.py" />
+<br />
+I will only be going through the functions and commands I coded for the bot, the code can be found in my github repository.
+<br />
+ 
+
+<Image
+  src="/blog-images/discord_bot/music_init_code.png"
+  alt="Timeout and request cancelled"
+/>
+Before writing the commands, I created a class variable 'queue' as a hash map which tracks the list of songs queued.
+<br />
+<Image
+  src="/blog-images/discord_bot/queue_hashmap.png"
+  alt="Timeout and request cancelled"
+/>
+This is a visual representation the songs data in the queue hash map.
+<br />
+Eg. In voice channel server 1002, song1 is next in queue followed by song2. Both songs have their array data containing their source and title.
+<br />
+I also created a **check_queue()** function which 
+- Check if theres any song in the queue 
+- If there is, play song in top of queue and remove it
+- After songs ends , call function again recursively to check if there is song in queue to play
+<br />
+
+<div style ={{border:'1px solid white',padding:'5%'}}>
+'!play' command
+<br />
+<Image src="/blog-images/discord_bot/play.png" alt="Timeout and request cancelled"/>
+</div>
+<br />
+<div style ={{border:'1px solid white',padding:'5%'}}>
+'!queue' command
+<br />
+<Image src="/blog-images/discord_bot/queue.png" alt="Timeout and request cancelled"/>
+</div>
+<br />
+<div style ={{border:'1px solid white',padding:'5%'}}>
+'!showqueue' command
+<br />
+<Image src="/blog-images/discord_bot/showqueue.png" alt="Timeout and request cancelled"/>
+</div>
+<br />
+<div style ={{border:'1px solid white',padding:'5%'}}>
+'!clearqueue' command
+<br />
+<Image src="/blog-images/discord_bot/clearqueue.png" alt="Timeout and request cancelled"/>
+</div>
+<br />
+<div style ={{border:'1px solid white',padding:'5%'}}>
+'!skip' command
+<br />
+<Image src="/blog-images/discord_bot/skip.png" alt="Timeout and request cancelled"/>
+</div>
+<br />
+<div style ={{border:'1px solid white',padding:'5%'}}>
+'!pause' command
+<br />
+<Image src="/blog-images/discord_bot/pause.png" alt="Timeout and request cancelled"/>
+</div>
+<br />
+<div style ={{border:'1px solid white',padding:'5%'}}>
+'!resume' command
+<br />
+<Image src="/blog-images/discord_bot/resume.png" alt="Timeout and request cancelled"/>
+</div>
+<div style ={{border:'1px solid white',padding:'5%'}}>
+'!commands' command
+<br />
+<Image src="/blog-images/discord_bot/commands.png" alt="Timeout and request cancelled"/>
+</div>
+
+<br />
+The code for all these commands can be found in my github repository.
+<br />
+With all these commands, it is very easy to stream music and edit the queue list.
+
+<Horizontal/>
+
+<Header>Conclusion</Header>
+
+From this project of creating a discord bot, I have learnt alot of things.
+<br />
+What I learnt? 
+<br />
+- How to scrap data from API and use the *JSON* data effectively
+- Learnt discord.py API to create the bot
+- Learn more about Object-Oriented Programming (OOP) in Python and got more comfortable in using classes.
+- Improved on reading documentation of APIs to figure out how to code up the bot
+
