@@ -3,7 +3,7 @@ import React from "react";
 const resume = () => {
   return (
     <iframe
-      src="AloysiusTan2022Resume.pdf"
+      src="AloysiusTanResume.pdf"
       style={{ width: "100%", height: "100vh" }}
     ></iframe>
   );
